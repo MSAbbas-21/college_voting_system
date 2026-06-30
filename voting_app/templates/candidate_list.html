@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Election Candidates</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="candidate-container">
+
+    <h1>College Election Candidates</h1>
+
+    <div class="candidate-grid">
+
+        {% for candidate in candidates %}
+        <div class="candidate-card">
+
+            <h2>{{ candidate.name }}</h2>
+
+            <p>
+                <strong>Department:</strong>
+                {{ candidate.department }}
+            </p>
+
+            <p>
+                <strong>Position:</strong>
+                {{ candidate.position }}
+            </p>
+
+            <a href="/vote/{{ candidate.id }}/" class="vote-btn">
+                Vote Now
+            </a>
+
+        </div>
+        {% empty %}
+        <p>No candidates available.</p>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

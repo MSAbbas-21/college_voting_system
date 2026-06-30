@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Voting System</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>College Voting Management System</h1>
+
+    <p>Welcome to Online College Election Portal</p>
+
+    <a href="{% url 'student_login' %}">
+        Student Login
+    </a>
+</div>
+
+</body>
+</html>
